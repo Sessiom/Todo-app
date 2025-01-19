@@ -5,7 +5,7 @@ export function TodoCard(props) {
     return (
         <div className='TodoCard'>
             <span>{todo.input}</span>
-            <div>
+            <div className='InputButtons'>
                 <button disabled={todo.complete} onClick={() => handleCompleteTodo(todo.id)}>Done</button>
                 <button onClick={() => handleDeleteTodo(todo.id)}>Delete</button>
             </div>

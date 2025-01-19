@@ -4,12 +4,8 @@
 }
 
 body{
-  background: linear-gradient(
-    #84bbd9,
-    #79aac5
-  );
-  height: 100vh;
-  overflow-y: hidden;
+  background-color: #84bbd9;
+  overflow-y: auto;
 }
 
 header {
@@ -77,12 +73,22 @@ button:hover {
 }
 
 .TodoCard span {
+  display: block;
   padding: 0.5rem;
+  max-width: 75%;
+  overflow-wrap: break-word;
 }
+
 
 .selected {
   border: solid #4ade80 2px;
   transform: scale(1.1);
 }
 
+@media (max-width: 800px){
+
+.TodoCard{
+  flex-direction: column;
+}
+}
 
