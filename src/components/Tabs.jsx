@@ -7,10 +7,10 @@ export function Tabs(props) {
     const numOfClosedTodos = todos.filter(todo => todo.complete === true).length
     return (
         <>
-            <div>
-            <button onClick={() => setSelectedTab('All')} className={selectedTab === "All" ? "selected": ""}>All ({numOfTodos})</button>
-            <button onClick={() => setSelectedTab('Open')} className={selectedTab === "Open" ? "selected": ""}>Open ({numOfOpenTodos})</button>
-            <button onClick={() => setSelectedTab('Closed')} className={selectedTab === "Closed" ? "selected": ""}>Closed ({numOfClosedTodos})</button>
+            <div className="tab-container">
+            <button id="tab" onClick={() => setSelectedTab('All')} className={selectedTab === "All" ? "selected": ""}>All ({numOfTodos})</button>
+            <button id="tab" onClick={() => setSelectedTab('Open')} className={selectedTab === "Open" ? "selected": ""}>Open ({numOfOpenTodos})</button>
+            <button id="tab" onClick={() => setSelectedTab('Closed')} className={selectedTab === "Closed" ? "selected": ""}>Closed ({numOfClosedTodos})</button>
             </div>
         </>
     )
