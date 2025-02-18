@@ -90,12 +90,32 @@ function App() {
 
     // After theme is set, enable the transitions 
     setTimeout(() => {
+      // Select elements
       const elements = document.querySelectorAll('body, header, h1, .TodoContainer, .InputRow, input, button, .TodoCard');
-      elements.forEach(el => {
-        el.style.transition = 'all 1s ease'; // Enable transitions
-      });
-    }, 0); // This ensures it happens immediately after the page load
-
+      
+    elements.forEach(el => {
+      // Check the element type to apply transitions to specific properties
+      if (el.tagName.toLowerCase() === 'body') {
+        el.style.transition = 'background-color 1s ease'; // Apply transition for background-color only
+      }
+      
+      if (el.classList.contains('InputRow')) {
+        el.style.transition = 'background-color 1s ease'; // Apply transition for background-color and border-color
+      }
+      
+      if (el.tagName.toLowerCase() === 'input') {
+        el.style.transition = 'background-color 1s ease'; // Apply transition for background-color only
+      }
+      
+      if (el.tagName.toLowerCase() === 'button') {
+        el.style.transition = 'transform 0.3s ease'; // Apply transition for background-color, transform, and color
+      }
+      
+      if (el.classList.contains('TodoCard')) {
+        el.style.transition = 'background-color 1s ease'; // Apply transition for background-color only
+      }
+    });
+  }, 0); // This ensures it happens immediately after the page load
   }, [])
 
   return (
